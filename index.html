@@ -88,7 +88,16 @@
         urlParams.forEach(function(value,key){
           // console.log(value);
 
-          key= = key.split("_").joing(" ");
+          key= = key.split("_").join(" ");
+          switch(key){
+            case "First Name":
+            case "Last Name":
+            case "Address":
+            case "City":
+              value = titleCase(value);
+              break;
+          }
+
 
           myOutput += `<p>${key}: ${value}</p>`;
         });
