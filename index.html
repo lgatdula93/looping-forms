@@ -76,7 +76,6 @@
   </main>
   <script src="js/main.js"></script>   
   <script>
-
     const queryString = window.location.search;
 
     const urlParams = new URLSearchParams(queryString);
@@ -85,29 +84,16 @@
       let myOutput = `<div id="container">`;//will store data for display
         //alert("Data submitted!");
       
-        urlParams.forEach(function(value,key){
-          // console.log(value);
+      urlParams.forEach(function(value,key){
+        //console.log(value);
+        myOutput += `<p>${value}</p>`;
 
-          key= = key.split("_").join(" ");
-          switch(key){
-            case "First Name":
-            case "Last Name":
-            case "Address":
-            case "City":
-              value = titleCase(value);
-              break;
-          }
-
-
-          myOutput += `<p>${key}: ${value}</p>`;
-        });
-
+      });
       myOutput += `<p><a href="index.html">CLEAR</a></p>`;
       myOutput += `</div>`;
       
       document.querySelector("#output").innerHTML = myOutput;
-}
-
+    }
   </script>
  </body>
 </html>
